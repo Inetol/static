@@ -9,45 +9,21 @@ body {
     padding-top: 40px
 }
 
-.navbar {
-    background: #502EE5;
-    color: #FFF;
-    min-height: 32px;
-    padding: 8px
+#list .filename {
+    white-space: normal;
+    word-break: break-all
 }
 
-a.nav-link {
-    color: #fff;
-    padding: 0
-}
-
-.navbar-brand {
-    font-size: 24px;
-    height: 24px;
-    line-height: 25px;
-    padding: 0
-}
-
-ol.breadcrumb {
-    margin: 5px 0;
-    padding: 0
+#list .thead-dark th a, #list .thead-dark th a:hover, #list .thead-dark th a:focus {
+    color: #FFF
 }
 
 #list a, #list a:hover, #list a:focus {
     color: #000
 }
 
-#list .thead-dark th a, #list .thead-dark th a:hover, #list .thead-dark th a:focus {
-    color: #fff
-}
-
 #list colgroup {
     display: none
-}
-
-#list .filename {
-    white-space: normal;
-    word-break: break-all
 }
 
 .footer {
@@ -57,6 +33,31 @@ ol.breadcrumb {
     width: 100%
 }
 
+.navbar {
+    background: #502EE5;
+    color: #FFF;
+    min-height: 32px;
+    padding: 8px
+}
+
+.navbar-brand {
+    font-size: 24px;
+    height: 24px;
+    line-height: 25px;
+    padding: 0
+}
+
+a.nav-link {
+    color: #FFF;
+    padding: 0
+}
+
 li.breadcrumb-item a, #list th a, #list th a:hover, #list th a:focus, .footer a, .footer a:hover, .footer a:focus {
     color: #502EE5
+}
+
+ol.breadcrumb {
+    background-color: transparent;
+    margin: 5px 0;
+    padding: 0
 }

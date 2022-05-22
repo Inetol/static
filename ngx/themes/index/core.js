@@ -8,7 +8,7 @@ function replaceBreadcrumbs() {
     const bits = breadcrumb.textContent.trim().replace(/\/$/, '').split('/');
     let path = '';
 
-    bits.forEach(function (item, idx) {
+    bits.forEach(function(item, idx) {
         path += item + '/';
 
         if (idx === 0) item = 'home';
@@ -39,7 +39,7 @@ function fixTable() {
 
     $('a[href^="../"]', table).closest('tr').remove();
 
-    $('tbody tr', table).each(function () {
+    $('tbody tr', table).each(function() {
         const icon = $('<td></td>');
         const filename = $('td:first a', this).attr('href').replace(/\?.*$/, '');
         let iconName;
@@ -56,7 +56,7 @@ function fixTable() {
     });
 }
 
-$(function () {
+$(function() {
     try {
         if (!hasHTML) {
             replaceBreadcrumbs();
