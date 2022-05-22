@@ -1,4 +1,5 @@
 Fast-access static storage
 ==========================
+
 Index of public files for distributed load of web content.
 These files do NOT serve directly the web, a CDN is in charge of indexing all the content periodically.
