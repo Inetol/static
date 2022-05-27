@@ -1,0 +1,132 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v1",
+    "update_url": null
+  },
+  "exported_at": "2021-06-20T19:13:00+00:00",
+  "name": "NodeJS [1.1.40]",
+  "author": "contact@inetol.net",
+  "description": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+  "features": null,
+  "images": [
+    "quay.io\/parkervcp\/pterodactyl-images:debian_nodejs-14",
+    "quay.io\/parkervcp\/pterodactyl-images:debian_nodejs-15"
+  ],
+  "file_denylist": [],
+  "startup": "clear && if [ {{DEBUG}} == 1 ]; then bash; fi; if [ {{AUTOUPIN}} == 1 ]; then if [ {{MODE}} == 0 ]; then npm install --production; fi; if [ {{MODE}} == 1 ]; then if [ {{YARNV}} == 2 ]; then yarn set version berry; fi; yarn install; fi; fi; if [ \"{{ENVAR1}}\" != \"\" ]; then export {{ENVAR1}}; fi; if [ \"{{ENVAR2}}\" != \"\" ]; then export {{ENVAR2}}; fi; if [ \"{{ENVAR3}}\" != \"\" ]; then export {{ENVAR3}}; fi; if [ \"{{ENVAR4}}\" != \"\" ]; then export {{ENVAR4}}; fi; if [ \"{{ENVAR5}}\" != \"\" ]; then export {{ENVAR5}}; fi; if [ {{MODE}} == 0 ]; then node {{FLAGS}} {{FILE}}; elif [ {{MODE}} == 1 ]; then if [ {{YARNV}} == 2 ]; then yarn set version berry; elif [ {{YARNV}} == 1 ]; then yarn set version latest; fi; yarn node {{FLAGS}} {{FILE}}; fi;",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"\/home\/container\"\r\n}",
+    "logs": "{}",
+    "stop": "^C^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!\/bin\/bash\r\napt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y git node-gyp curl jq file unzip make gcc g++ python python-dev libtool build-essential glibc; apt autoremove -y; apt autoclean; apt clean; clear\r\necho -e \"NodeJS DockerSlot V1.1.40 | EdgeStack\"\r\nexit 0",
+      "container": "debian:buster-slim",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "File",
+      "description": "NodeJS startup file name. (ex: \"src\/index.js\" or \"index.js\")",
+      "env_variable": "FILE",
+      "default_value": "index.js",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "Flags",
+      "description": "NodeJS startup flags.",
+      "env_variable": "FLAGS",
+      "default_value": "--optimize_for_size --unhandled-rejections=warn",
+      "user_viewable": true,
+      "user_editable": false,
+      "rules": "nullable|string"
+    },
+    {
+      "name": "Use YARN?",
+      "description": "Use YARN instead of NPM. It's strongly recommended to leave this as default if you don't know what are you doing.",
+      "env_variable": "MODE",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
+      "name": "YARN version",
+      "description": "If YARN is enabled, you need to specify which version is used. Recomended using the version \"2\".",
+      "env_variable": "YARNV",
+      "default_value": "2",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|numeric|between:1,2"
+    },
+    {
+      "name": "Auto [Update \/ Install] Packages",
+      "description": "Allow NPM or YARN installing or updating the packages when starting the slot.",
+      "env_variable": "AUTOUPIN",
+      "default_value": "1",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
+      "name": "Environment variable 1",
+      "description": "Saves a variable in the slot for later use when running the project. It's strongly recommended to leave this blank if you don't know what are you doing. (ex: \"TOKEN=AABBCCDD123\" or \"SECRET=295279283994230786\")",
+      "env_variable": "ENVAR1",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255"
+    },
+    {
+      "name": "Environment variable 2",
+      "description": "Saves a variable in the slot for later use when running the project. It's strongly recommended to leave this blank if you don't know what are you doing. (ex: \"TOKEN=AABBCCDD123\" or \"SECRET=295279283994230786\")",
+      "env_variable": "ENVAR2",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255"
+    },
+    {
+      "name": "Environment variable 3",
+      "description": "Saves a variable in the slot for later use when running the project. It's strongly recommended to leave this blank if you don't know what are you doing. (ex: \"TOKEN=AABBCCDD123\" or \"SECRET=295279283994230786\")",
+      "env_variable": "ENVAR3",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255"
+    },
+    {
+      "name": "Environment variable 4",
+      "description": "Saves a variable in the slot for later use when running the project. It's strongly recommended to leave this blank if you don't know what are you doing. (ex: \"TOKEN=AABBCCDD123\" or \"SECRET=295279283994230786\")",
+      "env_variable": "ENVAR4",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255"
+    },
+    {
+      "name": "Environment variable 5",
+      "description": "Saves a variable in the slot for later use when running the project. It's strongly recommended to leave this blank if you don't know what are you doing. (ex: \"TOKEN=AABBCCDD123\" or \"SECRET=295279283994230786\")",
+      "env_variable": "ENVAR5",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string|max:255"
+    },
+    {
+      "name": "Debug",
+      "description": "Allow access to terminal.",
+      "env_variable": "DEBUG",
+      "default_value": "0",
+      "user_viewable": false,
+      "user_editable": false,
+      "rules": "required|boolean"
+    }
+  ]
+}

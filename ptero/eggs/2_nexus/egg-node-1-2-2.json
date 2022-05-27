@@ -1,0 +1,78 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v1",
+    "update_url": null
+  },
+  "exported_at": "2021-09-01T01:03:55+00:00",
+  "name": "NodeJS [1.2.2]",
+  "author": "contact@inetol.net",
+  "description": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+  "features": null,
+  "images": [
+    "ghcr.io\/inetol\/nodejs_16",
+    "ghcr.io\/inetol\/nodejs_14"
+  ],
+  "file_denylist": [],
+  "startup": "if [ {{DEBUG}} = 1 ]; then bash; fi; if [ {{YARN}} = 0 ]; then npm install --production; else \r\nyarn install; fi; if [ {{TSNODE}} = 0 ]; then if [ {{YARN}} = 0 ]; then echo \u2501 && node {{FLAGS}} {{FILE}}; else \r\necho \u2501 && yarn node {{FLAGS}} {{FILE}}; fi; elif [ {{YARN}} = 0 ]; then echo \u2501 && NODE_OPTIONS=\"{{FLAGS}}\" ts-node --transpile-only {{FILE}}; else \r\nyarn add ts-node && echo \u2501 && NODE_OPTIONS=\"{{FLAGS}}\" yarn run ts-node --transpile-only {{FILE}}; fi;",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"\\u2501\"\r\n}",
+    "logs": "{}",
+    "stop": "^C^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "echo \"OK !\"",
+      "container": "ghcr.io\/inetol\/debian",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "File",
+      "description": "NodeJS main file name. [ex: \"index.js\" or \"src\/index.js\"]",
+      "env_variable": "FILE",
+      "default_value": "index.js",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "Flags",
+      "description": "NodeJS startup flags.",
+      "env_variable": "FLAGS",
+      "default_value": "--unhandled-rejections=warn",
+      "user_viewable": true,
+      "user_editable": false,
+      "rules": "nullable|string"
+    },
+    {
+      "name": "Use YARN?",
+      "description": "Use YARN instead of NPM. It's strongly recommended to leave this as default if you don't know what are you doing.",
+      "env_variable": "YARN",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
+      "name": "Use TS-NODE?",
+      "description": "Use TS-NODE instead of NODE. It's strongly recommended to leave this as default if you don't know what are you doing.",
+      "env_variable": "TSNODE",
+      "default_value": "0",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|boolean"
+    },
+    {
+      "name": "Debug",
+      "description": "Allow access to terminal.",
+      "env_variable": "DEBUG",
+      "default_value": "0",
+      "user_viewable": false,
+      "user_editable": false,
+      "rules": "required|boolean"
+    }
+  ]
+}
