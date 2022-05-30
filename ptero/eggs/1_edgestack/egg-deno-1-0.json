@@ -1,0 +1,59 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v1",
+    "update_url": null
+  },
+  "exported_at": "2021-06-20T19:13:03+00:00",
+  "name": "Deno [1.0]",
+  "author": "contact@inetol.net",
+  "description": null,
+  "features": null,
+  "images": [
+    "quay.io\/parkervcp\/pterodactyl-images:base_debian"
+  ],
+  "file_denylist": [],
+  "startup": "curl -fsSL https:\/\/deno.land\/x\/install\/install.sh | sh && export DENO_INSTALL=\"\/home\/container\/.deno\" && export PATH=\"$DENO_INSTALL\/bin:$PATH\" && if [[ {{DIR}} == *\"\/\"* ]]; then cd {{DIR}}; fi; deno run {{FLAGS}} {{FILE}}",
+  "config": {
+    "files": "{}",
+    "startup": "{}",
+    "logs": "{}",
+    "stop": "^c"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!\/bin\/bash\r\napt update && apt upgrade -y && apt install -y curl unzip && apt autoremove -y && apt autoclean && apt clean && curl -fsSL https:\/\/deno.land\/x\/install\/install.sh | sh && echo -e 'export DENO_INSTALL=\"\/root\/.deno\" && export PATH=\"$DENO_INSTALL\/bin:$PATH\"' >> .bashrc\r\necho -e \"\"\r\necho -e \"Install complete!\"\r\necho -e \"\"\r\nexit 0",
+      "container": "hayd\/debian-deno:latest",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "Startup File",
+      "description": "The file that starts the Deno program.",
+      "env_variable": "FILE",
+      "default_value": "mod.ts",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "Flags",
+      "description": "Customize Deno startup flags.",
+      "env_variable": "FLAGS",
+      "default_value": "-A --quiet --no-check --unstable",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "File Directory",
+      "description": "Go to the folder where the program is located.\r\n\r\nThe directory ALWAYS ends with \"\/\" (ex: \"src\/\")",
+      "env_variable": "DIR",
+      "default_value": "",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "nullable|string"
+    }
+  ]
+}

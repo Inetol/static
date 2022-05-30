@@ -1,0 +1,60 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v1",
+    "update_url": null
+  },
+  "exported_at": "2021-06-20T19:13:15+00:00",
+  "name": "Java [1.0.3]",
+  "author": "contact@inetol.net",
+  "description": "Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+  "features": null,
+  "images": [
+    "quay.io\/parkervcp\/pterodactyl-images:debian_openjdk-16",
+    "quay.io\/parkervcp\/pterodactyl-images:debian_openjdk-11"
+  ],
+  "file_denylist": [],
+  "startup": "java {{FLAGS}} {{FILE}}",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"\/home\/container\"\r\n}",
+    "logs": "{}",
+    "stop": "^C^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!\/bin\/bash\r\napt-get update && apt-get upgrade -y && apt-get install --no-install-recommends -y git curl jq file unzip make gcc g++ python python-dev libtool build-essential glibc; apt autoremove -y; apt autoclean; apt clean; clear\r\necho -e \"Java DockerSlot V1.0.3 | EdgeStack\"\r\nexit 0",
+      "container": "debian:sid-slim",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "File",
+      "description": "Java startup file name. (ex: \"folder\/bot.jar\" or \"bot.jar\")",
+      "env_variable": "FILE",
+      "default_value": "bot.jar",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "Flags",
+      "description": "Java startup flags.",
+      "env_variable": "FLAGS",
+      "default_value": "-jar",
+      "user_viewable": true,
+      "user_editable": false,
+      "rules": "nullable|string"
+    },
+    {
+      "name": "Debug",
+      "description": "Allow access to terminal.",
+      "env_variable": "DEBUG",
+      "default_value": "0",
+      "user_viewable": false,
+      "user_editable": false,
+      "rules": "required|boolean"
+    }
+  ]
+}

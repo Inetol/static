@@ -1,0 +1,59 @@
+{
+  "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+  "meta": {
+    "version": "PTDL_v1",
+    "update_url": null
+  },
+  "exported_at": "2021-06-20T19:13:10+00:00",
+  "name": "Deno [1.1.5]",
+  "author": "contact@inetol.net",
+  "description": null,
+  "features": null,
+  "images": [
+    "quay.io\/parkervcp\/pterodactyl-images:base_debian"
+  ],
+  "file_denylist": [],
+  "startup": "curl -fsSL https:\/\/deno.land\/x\/install\/install.sh | sh && export DENO_INSTALL=\"\/home\/container\/.deno\" && export PATH=\"$DENO_INSTALL\/bin:$PATH\"; if [ {{DEBUG}} == 1 ]; then bash; fi; deno run {{FLAGS}} {{FILE}};",
+  "config": {
+    "files": "{}",
+    "startup": "{\r\n    \"done\": \"--help' to get started\"\r\n}",
+    "logs": "{}",
+    "stop": "^C^C"
+  },
+  "scripts": {
+    "installation": {
+      "script": "#!\/bin\/bash\r\napt update && apt upgrade -y && apt install -y curl unzip && apt autoremove -y && apt autoclean && apt clean\r\necho -e \"\"\r\necho -e \"Deno DockerSlot V1.1.5 | EdgeStack\"\r\necho -e \"\"\r\nexit 0",
+      "container": "hayd\/debian-deno:latest",
+      "entrypoint": "bash"
+    }
+  },
+  "variables": [
+    {
+      "name": "JS\/TS File",
+      "description": "Deno startup file name. (ex: \"src\/mod.ts\" or \"mod.ts\")",
+      "env_variable": "FILE",
+      "default_value": "mod.ts",
+      "user_viewable": true,
+      "user_editable": true,
+      "rules": "required|string"
+    },
+    {
+      "name": "Flags",
+      "description": "Deno startup flags.",
+      "env_variable": "FLAGS",
+      "default_value": "-A --quiet --no-check --unstable",
+      "user_viewable": true,
+      "user_editable": false,
+      "rules": "nullable|string"
+    },
+    {
+      "name": "Debug",
+      "description": "Allow access to terminal.",
+      "env_variable": "DEBUG",
+      "default_value": "0",
+      "user_viewable": false,
+      "user_editable": false,
+      "rules": "required|boolean"
+    }
+  ]
+}
