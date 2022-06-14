@@ -34,7 +34,7 @@ body {
 }
 
 .navbar {
-    background: #502EE5;
+    background: #4E2CBF;
     color: #FFF;
     min-height: 32px;
     padding: 8px
@@ -53,7 +53,7 @@ a.nav-link {
 }
 
 li.breadcrumb-item a, #list th a, #list th a:hover, #list th a:focus, .footer a, .footer a:hover, .footer a:focus {
-    color: #502EE5
+    color: #4E2CBF
 }
 
 ol.breadcrumb {
