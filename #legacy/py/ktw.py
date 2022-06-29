@@ -18,12 +18,9 @@ class Menu:
 
 	# Comprova que "n" estigui entre "_min" i "_max", retorna una "Bool".
 	def check(self, _min, _max, n):
-		if not n.isdigit():
-			return False
-		elif _min <= int(n) <= _max:
-			return True
-		else:
-			return False
+		if not n.isdigit(): return False
+		elif _min <= int(n) <= _max: return True
+		else: return False
 
 	# Funció que redirigeix a una selecció del menú mitjançant "_n".
 	def option(self, _n):
@@ -67,12 +64,9 @@ class Menu:
 			print('Fet.')
 			time.sleep(1)
 
-		if _n == 1:
-			one()
-		elif _n == 2:
-			two()
-		elif _n == 3:
-			three()
+		if _n == 1: one()
+		elif _n == 2: two()
+		elif _n == 3: three()
 
 	# Ensenya l'estat actual de la paraula amb el menú de selecció.
 	def run(self):
