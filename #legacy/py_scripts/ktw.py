@@ -85,7 +85,7 @@ memory = Memory()
 # Estableix les variables inicials.
 memory.write('ingame', True)
 memory.write('player', 0)
-memory.write('priv_list', list(open('_data/ktw/paraules.txt').readlines()[random.randrange(0, len(open('_data/ktw/paraules.txt').readlines()))].replace('\n', '').strip(' ')))
+memory.write('priv_list', list(open('src/ktw/w_list.txt').readlines()[random.randrange(0, len(open('src/ktw/w_list.txt').readlines()))].replace('\n', '').strip(' ')))
 memory.write('static_list', memory.read('priv_list').copy())
 random.shuffle(memory.read('static_list'))
 memory.write('dynamic_list', [])
