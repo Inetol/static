@@ -6,7 +6,7 @@
 
 # Versión: int
 # ! NO MODIFICAR
-#version: latest
+#version: 2
 version: 2
 
 # Update: bool
