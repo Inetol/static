@@ -5,7 +5,7 @@
 
 
 # Versión: int
-# - Establece la versión del archivo de configuración instalado, NO MODIFICAR
+# - NO MODIFICAR
 version: 2
 
 # Update: bool
