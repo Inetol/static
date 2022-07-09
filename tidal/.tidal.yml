@@ -1,0 +1,50 @@
+#####################################################################################################
+# Bienvenido, este es el archivo de configuración donde se encuentran todos los parámetros de Tidal #
+#####################################################################################################
+# Origen: https://raw.githubusercontent.com/Inetol/static/rolling/tidal/.tidal.yml
+
+
+# Versión: int
+# - Establece la versión del archivo de configuración instalado, NO MODIFICAR
+version: 1
+
+## Apartado: Tidal
+tidal:
+  # Runtime: string
+  # - Aquí puedes establecer el entorno que necesita tu proyecto en el slot.
+  #
+  # ? Valores disponibles: "java", "deno" y "node"
+  #runtime: none
+  runtime: none
+
+## Apartado: Slot
+slot:
+  # Runtime: string
+  # - Ubicación del fichero maestro. (Ej. "base.jar" "src/index.ts" ...)
+  #file: "index.js"
+  file: "index.js"
+
+  ## Apartado: GIT
+  git:
+    # Enabled: bool
+    # - Habilita la utilización de GIT para actualizar los ficheros desde un repositorio remoto.
+    #
+    # ! NO SE RECOMIENDA HABILITAR SI NO SABES QUE ESTÁS HACIENDO. ESTA ACCIÓN PUEDE PRODUCIR PERDIDA DE DATOS.
+    #enabled: false
+    enabled: false
+
+    # URL: string
+    # - URL del repositorio remoto.
+    #
+    # ! Este campo solo tendrá efecto si está habilitado GIT.
+    #url: ""
+    url: ""
+
+    # Token: string
+    # - En caso de tener un repositorio privado, Tidal va a necesitar un token de acceso al repositorio de tu proveedor.
+    # - GitHub: https://docs.github.com/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
+    # - GitLab: https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token
+    #
+    # ! Este campo solo tendrá efecto si está habilitado GIT.
+    #token: ""
+    token: ""
