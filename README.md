@@ -8,8 +8,9 @@
 <details><summary>Index</summary>
 <p>
 
-* **[Assets](https://github.com/Inetol/static/tree/rolling/assets)<sup>[ALL]</sup>**
 * **[Legacy](https://github.com/Inetol/static/tree/rolling/%23legacy)<sup>[PROTECTED]</sup>**
+* **[Assets](https://github.com/Inetol/static/tree/rolling/assets)<sup>[ALL]</sup>**
+* **[Tidal](https://github.com/Inetol/static/tree/rolling/tidal)<sup>[ALL]</sup>**
 
 </p>
 </details>
