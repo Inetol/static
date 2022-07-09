@@ -12,8 +12,8 @@ version: 2
 # - Esto habilitará la actualización del archivo de configuración cuando haya una nueva versión disponible.
 # - Si quieres asegurarte de que tu proyecto siempre esté funcionando, deberías cambiar el valor a "false".
 #
-# ! NO OBSTANTE, cualquier nueva actualización del fichero de configuración "puede" producir problemas con Tidal.
-# ! Se recomienda encarecidamente realizar una revisión manual y aplicar las nuevas actualizaciones que haya disponibles.
+# ! NO OBSTANTE, cualquier nueva actualización del fichero de configuración puede hacer que la versión local produzca problemas con Tidal.
+# ! Se recomienda encarecidamente realizar una revisión manual y aplicar las nuevas actualizaciones que haya disponibles de vez en cuando.
 update: true
 
 ## Apartado: Tidal
