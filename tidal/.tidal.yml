@@ -6,7 +6,15 @@
 
 # Versión: int
 # - Establece la versión del archivo de configuración instalado, NO MODIFICAR
-version: 1
+version: 2
+
+# Update: bool
+# - Esto habilitará la actualización del archivo de configuración cuando haya una nueva versión disponible.
+# - Si quieres asegurarte de que tu proyecto siempre esté funcionando, deberías cambiar el valor a "false".
+#
+# ! NO OBSTANTE, cualquier nueva actualización del fichero de configuración "puede" producir problemas con Tidal.
+# ! Se recomienda encarecidamente realizar una revisión manual y aplicar las nuevas actualizaciones que haya disponibles.
+update: true
 
 ## Apartado: Tidal
 tidal:
