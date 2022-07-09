@@ -5,7 +5,6 @@
 
 
 # Versión: int
-#
 # ! NO MODIFICAR
 #version: latest
 version: 2
@@ -49,6 +48,7 @@ slot:
     #
     # ? :user | Usuario
     # ? :repo | Repositorio
+    #
     # ! Este campo solo tendrá efecto si está habilitado GIT.
     #url: "https://github.com/:user/:repo"
     url: "https://github.com/:user/:repo"
@@ -58,6 +58,7 @@ slot:
     #
     # ? GitHub: https://docs.github.com/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
     # ? GitLab: https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#create-a-personal-access-token
+    #
     # ! Este campo solo tendrá efecto si está habilitado GIT.
     #token: ""
     token: ""
