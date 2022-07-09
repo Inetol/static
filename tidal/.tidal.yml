@@ -5,7 +5,9 @@
 
 
 # Versión: int
+#
 # ! NO MODIFICAR
+#version: latest
 version: 2
 
 # Update: bool
@@ -14,6 +16,7 @@ version: 2
 #
 # ! NO OBSTANTE, cualquier nueva actualización del fichero de configuración puede hacer que la versión local produzca problemas con Tidal.
 # ! Se recomienda encarecidamente realizar una revisión manual y aplicar las nuevas actualizaciones que haya disponibles de vez en cuando.
+#update: true
 update: true
 
 ## Apartado: Tidal
