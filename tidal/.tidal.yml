@@ -1,15 +1,15 @@
-#####################################################################################################
-# Bienvenido, este es el archivo de configuración donde se encuentran todos los parámetros de Tidal #
-#####################################################################################################
+####################################
+# Bienvenido a Tidal // .tidal.yml #
+####################################
 # Origen: https://raw.githubusercontent.com/Inetol/static/rolling/tidal/.tidal.yml
 
 
-# Versión: int
+## Versión: int
 # ! NO MODIFICAR
 #version: 2
 version: 2
 
-# Update: bool
+## Update: bool
 # - Esto habilitará la actualización del archivo de configuración cuando haya una nueva versión disponible.
 # - Si quieres asegurarte de que tu proyecto siempre esté funcionando, deberías cambiar el valor a "false".
 #
@@ -18,42 +18,44 @@ version: 2
 #update: true
 update: true
 
-## Apartado: Tidal
+### Apartado: Tidal
 tidal:
-  # Runtime: string
+  ## Runtime: string
   # - Aquí puedes establecer el entorno que necesita tu proyecto en el slot.
   #
   # ? Valores disponibles: "java", "deno" y "node"
   #runtime: none
   runtime: none
 
-## Apartado: Slot
+  ## Rainbow: bool
+  # - ?
+  #rainbow: false
+  #rainbow: false
+
+### Apartado: Slot
 slot:
-  # Runtime: string
+  ## Runtime: string
   # - Ubicación del fichero maestro a ejecutar.
   #file: "src/index.js"
   file: "src/index.js"
 
-  ## Apartado: GIT
+  ### Sub-apartado: GIT
   git:
-    # Enabled: bool
+    ## Enabled: bool
     # - Habilita GIT para mantener los ficheros locales actualizados con un repositorio remoto.
     #
     # ! NO SE RECOMIENDA HABILITAR SI NO SABES QUE ESTÁS HACIENDO. ESTA ACCIÓN PUEDE PRODUCIR PERDIDA DE DATOS.
     #enabled: false
     enabled: false
 
-    # URL: string
+    ## URL: string
     # - URL del repositorio remoto.
     #
-    # ? :user | Usuario
-    # ? :repo | Repositorio
-    #
     # ! Este campo solo tendrá efecto si está habilitado GIT.
-    #url: "https://github.com/:user/:repo"
-    url: "https://github.com/:user/:repo"
+    #url: "https://github.com/:usuario/:repo"
+    url: "https://github.com/:usuario/:repo"
 
-    # Token: string
+    ## Token: string
     # - En caso de tener un repositorio privado, Tidal va a necesitar un token de acceso al repositorio remoto de tu proveedor.
     #
     # ? GitHub: https://docs.github.com/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-token
@@ -63,7 +65,7 @@ slot:
     #token: ""
     token: ""
 
-    # Branch: string
+    ## Branch: string
     # - La rama del repositorio remoto a utilizar.
     #
     # ! Este campo solo tendrá efecto si está habilitado GIT.
